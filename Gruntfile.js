@@ -15,11 +15,16 @@ module.exports = function(grunt) {
 		'cssmin': {
 			'dist': {
 				'options': {
-					'report': false
+					'report': false,
+					'line-break': 7000
 				},
 				'files': [{
 					'src': 'examples/example.css',
 					'dest': 'examples/example.min.css'
+				},
+				{
+					'src': 'examples/example-long.css',
+					'dest': 'examples/example-long.min.css'
 				}]
 			}
 		},

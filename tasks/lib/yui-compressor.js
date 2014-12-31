@@ -19,7 +19,8 @@ exports.init = function(grunt) {
 		var max = concat(source);
 		var min;
 		var report = options.report;
-
+		var lineBreak = options["line-break"];
+		
 		// Ugly hack to create the destination path automatically if needed
 		if (!grunt.file.exists(destination)) {
 			grunt.file.write(destination, '');
@@ -30,6 +31,7 @@ exports.init = function(grunt) {
 			'type': 'yui-' + options.type,
 			'fileIn': source,
 			'fileOut': destination,
+			'options': ['--line-break=' + lineBreak],
 			'callback': function(error) {
 				if (error) {
 					grunt.warn(error);

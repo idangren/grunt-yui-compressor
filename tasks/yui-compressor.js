@@ -43,7 +43,8 @@ module.exports = function(grunt) {
 						done();
 					}
 				},
-				'report': options.report
+				'report': options.report,
+				'line-break': options['line-break'] ? options['line-break'] : 0
 			});
 		});
 	});
